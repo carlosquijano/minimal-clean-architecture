@@ -1,18 +1,43 @@
-package io.github.carlosquijano.clean
+package io.github.carlosquijano.minimal
 
 import android.os.Build
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import androidx.test.core.app.ApplicationProvider
+import com.carlosquijano.clean.data.di.dataModule
+import io.github.carlosquijano.clean.MainActivity
+import org.junit.After
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
+import org.koin.core.logger.Level
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
-class MainActivityTest {
+class MainActivityTest : BaseKoinTest() {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<MainActivity>()
+
+    @Before
+    fun setup() {
+        stopKoin()
+        startKoin {
+            androidLogger(Level.DEBUG)
+            androidContext(ApplicationProvider.getApplicationContext())
+            modules(dataModule)
+        }
+    }
+
+    @After
+    fun tearDown() {
+        stopKoin()
+    }
 
     @Test
     @Config(sdk = [Build.VERSION_CODES.M])
