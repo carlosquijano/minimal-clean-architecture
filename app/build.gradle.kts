@@ -18,6 +18,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:data"))
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.activity.compose)
