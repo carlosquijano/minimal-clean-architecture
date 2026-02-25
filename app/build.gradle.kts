@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "io.github.carlosquijano.minimal"
+    namespace = "io.github.carlosquijano.minimal.clean"
     compileSdk = 36
     defaultConfig { minSdk = 23; targetSdk = 36 }
     buildFeatures { compose = true }
@@ -18,7 +18,10 @@ android {
 }
 
 dependencies {
-    implementation(libs.kotlin.stdlib)
+    implementation(project(":core:domain"))
+    implementation(project(":core:data"))
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.activity.compose)
