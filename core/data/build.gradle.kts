@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "io.github.carlosquijano.clean.data"
+    namespace = "io.github.carlosquijano.minimal.clean.data"
     compileSdk = 36
     defaultConfig { minSdk = 23 }
     buildTypes { debug { enableUnitTestCoverage = true } }

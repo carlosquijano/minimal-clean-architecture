@@ -1,10 +1,10 @@
-package io.github.carlosquijano.clean
+package io.github.carlosquijano.minimal.clean
 
 import android.os.Build
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.core.app.ApplicationProvider
-import com.carlosquijano.clean.data.di.dataModule
+import com.carlosquijano.minimal.clean.data.di.dataModule
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule

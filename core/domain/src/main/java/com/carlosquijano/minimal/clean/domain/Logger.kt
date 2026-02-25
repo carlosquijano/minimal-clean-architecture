@@ -1,4 +1,4 @@
-package com.carlosquijano.clean.domain
+package com.carlosquijano.minimal.clean.domain
 
 interface Logger {
     fun d(tag: String, message: String)

@@ -1,8 +1,8 @@
-package io.github.carlosquijano.clean
+package io.github.carlosquijano.minimal.clean
 
 import android.app.Application
-import com.carlosquijano.clean.data.di.dataModule
-import com.carlosquijano.clean.domain.Logger
+import com.carlosquijano.minimal.clean.data.di.dataModule
+import com.carlosquijano.minimal.clean.domain.Logger
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

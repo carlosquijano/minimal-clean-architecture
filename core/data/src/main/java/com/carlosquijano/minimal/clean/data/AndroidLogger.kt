@@ -1,7 +1,7 @@
-package com.carlosquijano.clean.data
+package com.carlosquijano.minimal.clean.data
 
 import android.util.Log
-import com.carlosquijano.clean.domain.Logger
+import com.carlosquijano.minimal.clean.domain.Logger
 
 class AndroidLogger : Logger {
     override fun d(tag: String, message: String) {

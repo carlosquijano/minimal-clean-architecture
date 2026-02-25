@@ -1,7 +1,7 @@
-package io.github.carlosquijano.clean
+package io.github.carlosquijano.minimal.clean
 
 import androidx.test.core.app.ApplicationProvider
-import com.carlosquijano.clean.data.di.dataModule
+import com.carlosquijano.minimal.clean.data.di.dataModule
 import org.junit.After
 import org.junit.Before
 import org.koin.android.ext.koin.androidContext

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "io.github.carlosquijano.clean"
+    namespace = "io.github.carlosquijano.minimal.clean"
     compileSdk = 36
     defaultConfig { minSdk = 23; targetSdk = 36 }
     buildFeatures { compose = true }
