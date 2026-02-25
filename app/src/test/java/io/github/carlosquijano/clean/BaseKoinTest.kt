@@ -1,4 +1,4 @@
-package io.github.carlosquijano.minimal
+package io.github.carlosquijano.clean
 
 import androidx.test.core.app.ApplicationProvider
 import com.carlosquijano.clean.data.di.dataModule
