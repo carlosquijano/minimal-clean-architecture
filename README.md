@@ -1,4 +1,4 @@
-# minimal-android-project
+# minimal-clean-architecture
 
 Clean Architecture template for Android with Compose, Koin and Room.
 
