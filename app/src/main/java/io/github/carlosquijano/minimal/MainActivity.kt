@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.carlosquijano.minimal
+package io.github.carlosquijano.clean
 
 import android.os.Build
 import android.os.Bundle

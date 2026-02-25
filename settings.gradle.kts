@@ -18,5 +18,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "minimal-android-project"
+rootProject.name = "minimal-clean-architecture"
+include(":core:domain", ":core:data")
 include(":app")

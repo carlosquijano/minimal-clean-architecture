@@ -1,4 +1,4 @@
-package io.github.carlosquijano.minimal
+package io.github.carlosquijano.clean
 
 import android.os.Build
 import androidx.compose.ui.test.junit4.createAndroidComposeRule

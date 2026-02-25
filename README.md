@@ -1,7 +1,6 @@
 # minimal-android-project
 
-This repository explores how simple it can be to set up a valid,
-working Android project with **Kotlin + Jetpack Compose + Material 3**.
+Clean Architecture template for Android with Compose, Koin and Room.
 
 You will need:
 
@@ -16,147 +15,25 @@ You will need:
 ## Project structure
 
 ```
-project
- ├── versions.toml
- ├── settings.gradle.kts
- └── app
-     ├── build.gradle.kts
-     └── src
-         ├── main
-         │   ├── AndroidManifest.xml
-         │   ├── java/io/github/carlosquijano/minimal
-         │   │   └── MainActivity.kt
-         │   └── res
-         │       └── values
-         │           ├── themes.xml
-         │           └── themes.xml (in values-night/)
-         └── test
-             └── java/io/github/carlosquijano/minimal
-                 └── MainActivityTest.kt
-```
-
-## AndroidManifest.xml
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application
-        android:label="minimal-android-project"
-        android:theme="@style/Theme.Minimal"
-        android:icon="@android:drawable/sym_def_app_icon">
-        <activity android:name="MainActivity" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-</manifest>
-```
-
-## MainActivity.kt
-
-```kotlin
-class MainActivity : ComponentActivity() {
-    public override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            val darkTheme = isSystemInDarkTheme()
-            val supportsDynamicColor = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
-            val colorScheme = when {
-                supportsDynamicColor && darkTheme -> dynamicDarkColorScheme(this)
-                supportsDynamicColor && !darkTheme -> dynamicLightColorScheme(this)
-                darkTheme -> darkColorScheme()
-                else -> lightColorScheme()
-            }
-
-            MaterialTheme(colorScheme = colorScheme) {
-                Text(
-                    text = "Hello world!",
-                    style = MaterialTheme.typography.displaySmall,
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .wrapContentSize(Alignment.Center)
-                )
-            }
-        }
-    }
-}
-```
-
-## Theme resource files
-
-**`res/values/themes.xml`** (light theme):
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Theme.Minimal" parent="android:Theme.Material.Light.NoActionBar" />
-</resources>
-```
-
-**`res/values-night/themes.xml** (dark theme):
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Theme.Minimal" parent="android:Theme.Material.NoActionBar" />
-</resources>
-```
-
-> These XML themes only remove the ActionBar. Colors are handled by Compose.
-
-### How colors work:
-- **Android 12+ (API 31+)**: App uses system dynamic colors (from wallpaper)
-- **Android < 12**: App uses Material 3 default colors
-- **Dark/Light mode**: Automatically handled by MaterialTheme
-- XML themes only remove ActionBar — colors are controlled by Compose
-
-## Testing with Robolectric
-
-This project uses **Robolectric** for fast, reliable unit tests without emulators:
-
-- ✅ **4 tests** covering all theme combinations (light/dark, low/high API)
-- ✅ **100% line and branch coverage**
-- ✅ **No emulator needed** - runs in seconds on JVM
-
-### MainActivityTest.kt
-
-```kotlin
-class MainActivityTest {
-    @get:Rule
-    val composeTestRule = createAndroidComposeRule<MainActivity>()
-
-    @Test
-    @Config(sdk = [Build.VERSION_CODES.M])
-    fun testLowApi_lightTheme() {
-        composeTestRule.onNodeWithText("Hello world!").assertExists()
-    }
-
-    @Test
-    @Config(sdk = [Build.VERSION_CODES.M], qualifiers = "night")
-    fun testLowApi_darkTheme() {
-        composeTestRule.onNodeWithText("Hello world!").assertExists()
-    }
-
-    @Test
-    @Config(sdk = [Build.VERSION_CODES.S])
-    fun testHighApi_lightTheme() {
-        composeTestRule.onNodeWithText("Hello world!").assertExists()
-    }
-
-    @Test
-    @Config(sdk = [Build.VERSION_CODES.S], qualifiers = "night")
-    fun testHighApi_darkTheme() {
-        composeTestRule.onNodeWithText("Hello world!").assertExists()
-    }
-}
+minimal-clean-architecture/
+├── app/                          # Android app module
+│   └── src/main/
+├── core/
+│   ├── domain/                   # Business logic (pure Kotlin)
+│   │   └── src/main/java/        # Standard Android source code
+│   └── data/                     # Data layer
+│       └── src/main/java/        # Standard Android source code
+├── gradle/
+│   └── libs.versions.toml
+├── .gitignore
+└── settings.gradle.kts
 ```
 
 ## How to build
 
 ```bash
-git clone https://github.com/carlosquijano/minimal-android-project.git
-cd minimal-android-project
+git clone https://github.com/carlosquijano/minimal-clean-architecture.git
+cd minimal-clean-architecture
 gradle installDebug
 ```
 
@@ -184,12 +61,14 @@ open app/build/reports/kover/html/debug/index.html
 
 ## What's inside
 
+- Clean Architecture
 - Kotlin + Jetpack Compose + Material 3
 - Minimal Gradle configuration (no wrapper, you bring your own Gradle)
 - Dynamic colors on Android 12+ (Material You)
 - Native Android themes (no AppCompat) with light/dark mode support
 - No action bar (Edge-to-edge by default)
 - Single activity with "Hello world!"
+- Koin and Room Database support
 - **Robolectric** for fast unit tests
 - **Kover** for 100% coverage reporting
 
@@ -217,4 +96,4 @@ open app/build/reports/kover/html/debug/index.html
 
 ## Contact
 
-Suggestions on how to minimize this further are welcome!
+Suggestions on how to either minimize or enhance this further are welcome!
