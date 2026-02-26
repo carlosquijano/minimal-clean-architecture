@@ -1,6 +1,7 @@
 # minimal-clean-architecture
 
-Clean Architecture template for Android with Compose, Koin and Room.
+This repository explores how simple it can be to set up a valid, working Android project with 
+Kotlin + Jetpack Compose + Material 3 following clean architecture principles.
 
 You will need:
 
