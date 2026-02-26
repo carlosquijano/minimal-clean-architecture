@@ -17,6 +17,7 @@ package io.github.carlosquijano.minimal.clean
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -32,7 +33,10 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
+private const val TAG = "MainActivity"
+
 class MainActivity : ComponentActivity() {
+
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -48,6 +52,7 @@ class MainActivity : ComponentActivity() {
                     else lightColorScheme()
                 }
             }
+            Log.d(TAG, "Build SDK version: ${Build.VERSION.SDK_INT}, isDarkTheme: $darkTheme")
 
             MaterialTheme(colorScheme = colorScheme) {
                 Surface {
@@ -61,6 +66,7 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
+            Log.d(TAG, "✅ Compose UI is ready")
         }
     }
 }
