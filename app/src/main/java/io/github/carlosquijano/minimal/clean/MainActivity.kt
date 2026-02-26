@@ -66,7 +66,6 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
-            Log.d(TAG, "✅ Compose UI is ready")
         }
     }
 }
