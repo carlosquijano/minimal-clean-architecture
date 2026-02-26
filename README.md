@@ -4,25 +4,27 @@ Clean Architecture template for Android with Compose, Koin and Room.
 
 You will need:
 
-* One `.kt` activity source file
+* Two `.kt` application and activity source file
 * One `.kt` activity source test file
 * One `AndroidManifest.xml`
-* One `settings.gradle.kts`
-* One `app/build.gradle.kts` (no root `build.gradle.kts`)
 * One `versions.toml` gradle catalog file
-* Two theme resource files (`res/values/themes.xml` and `res/values-night/themes.xml`)
+* Two gradle configuration files: `settings.gradle.kts` and `app/build.gradle.kts`
+* Two module configuration files: `data/build.gradle.kts` and `domain/build.gradle.kts`
+* Two app theme resource files (`res/values/themes.xml` and `res/values-night/themes.xml`)
 
 ## Project structure
 
 ```
 minimal-clean-architecture/
 ├── app/                          # Android app module
-│   └── src/main/
+│   └── src/main/java             # Production code
+│   └── src/test/java              # Unit tests
 ├── core/
 │   ├── domain/                   # Business logic (pure Kotlin)
 │   │   └── src/main/java/        # Standard Android source code
 │   └── data/                     # Data layer
 │       └── src/main/java/        # Standard Android source code
+│       └── src/test/java/        # Unit tests
 ├── gradle/
 │   └── libs.versions.toml
 ├── .gitignore
@@ -48,8 +50,11 @@ gradle testDebugUnitTest
 # Generate coverage report (using Kover)
 gradle koverHtmlReportDebug
 
-# Open coverage report
-open app/build/reports/kover/html/debug/index.html
+# Open Kover HTML report for `:app` 
+open app/build/reports/kover/htmlDebug/index.html
+
+# Open Kover HTML report for `:core:data` 
+open data/build/reports/kover/htmlDebug/index.html
 ```
 
 ## Requirements
