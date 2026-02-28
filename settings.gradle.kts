@@ -22,6 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "minimal-clean-architecture"
 include(":core:domain", ":core:data")
 include(":app")

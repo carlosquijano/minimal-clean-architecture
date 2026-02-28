@@ -19,15 +19,14 @@ You will need:
 minimal-clean-architecture/
 ├── app/                          # Android app module
 │   └── src/main/java             # Production code
-│   └── src/test/java              # Unit tests
+│   └── src/test/java             # Unit tests
 ├── core/
 │   ├── domain/                   # Business logic (pure Kotlin)
 │   │   └── src/main/java/        # Standard Android source code
 │   └── data/                     # Data layer
 │       └── src/main/java/        # Standard Android source code
 │       └── src/test/java/        # Unit tests
-├── gradle/
-│   └── libs.versions.toml
+│   libs.versions.toml
 ├── .gitignore
 └── settings.gradle.kts
 ```
