@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 env:
-  GRADLE_OPTS: "-Xmx3072m -XX:MaxMetaspaceSize=768m -XX:+UseG1GC -XX:+AlwaysPreTouch -XX:+UseStringDeduplication"
+  GRADLE_OPTS: "-Xmx4096m -Xms1024m -XX:MaxMetaspaceSize=768m -XX:+UseG1GC -XX:+AlwaysPreTouch -XX:+UseStringDeduplication"
 
 jobs:
   build:
