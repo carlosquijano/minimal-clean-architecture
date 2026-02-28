@@ -9,7 +9,7 @@ You will need:
 * One `.kt` activity source test file
 * One `AndroidManifest.xml`
 * One `versions.toml` gradle catalog file
-* Two gradle configuration files: `settings.gradle.kts` and `app/build.gradle.kts`
+* Two Gradle configuration files: `settings.gradle.kts` and `app/build.gradle.kts`
 * Two module configuration files: `data/build.gradle.kts` and `domain/build.gradle.kts`
 * Two app theme resource files (`res/values/themes.xml` and `res/values-night/themes.xml`)
 
@@ -55,7 +55,7 @@ gradle koverHtmlReportDebug
 open app/build/reports/kover/htmlDebug/index.html
 
 # Open Kover HTML report for `:core:data` 
-open data/build/reports/kover/htmlDebug/index.html
+open core/data/build/reports/kover/htmlDebug/index.html
 ```
 
 ## Requirements
@@ -97,8 +97,9 @@ open data/build/reports/kover/htmlDebug/index.html
 - Version catalog TOML file makes it easy to update dependencies.
 - **Tests use Robolectric** - runs in seconds without emulators
 - **Coverage uses Kover** - simpler than JaCoCo, works out of the box
-- AGP 9.0.1 works best with **Android Studio Otter 3 Feature Drop (2025.2.3) or newer**, but you can use any IDE that supports Gradle builds.
+- AGP 9.0.1 works best with **Android Studio Panda 1 | 2025.3.1 Patch 1** or newer**, but you can use any IDE that supports Gradle builds.
 - Repository is set up as a **GitHub template**. Use the "Use this template" button to create new projects with the same minimal structure and 100% test coverage already configured.
+
 
 ## Contact
 
