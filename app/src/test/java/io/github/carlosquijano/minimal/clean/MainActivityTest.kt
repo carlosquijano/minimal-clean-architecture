@@ -19,14 +19,6 @@ class MainActivityTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
-    @Before
-    fun setupKoin() {
-        stopKoin()
-        startKoin {
-            modules(dataModule)
-        }
-    }
-
     @After
     fun tearDownKoin() {
         stopKoin()

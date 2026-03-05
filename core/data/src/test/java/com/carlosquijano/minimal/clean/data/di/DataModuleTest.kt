@@ -27,7 +27,6 @@ import org.koin.test.verify.verify
 class DataModuleTest : KoinTest {
     @Before
     fun setUp() {
-        stopKoin()
         startKoin {
             modules(dataModule)
         }

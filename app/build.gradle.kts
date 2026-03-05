@@ -20,6 +20,7 @@ android {
 dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:data"))
+    kover(project(":core:data"))
     implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation(platform(libs.androidx.compose.bom))
