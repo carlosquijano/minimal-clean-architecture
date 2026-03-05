@@ -16,7 +16,7 @@
 package io.github.carlosquijano.minimal.clean
 
 import android.app.Application
-import com.carlosquijano.minimal.clean.data.di.dataModule
+import io.github.carlosquijano.minimal.clean.data.dataModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.carlosquijano.minimal.clean.data.di
+package io.github.carlosquijano.minimal.clean.data
 
+import io.github.carlosquijano.minimal.clean.domain.domainModule
 import org.koin.dsl.module
 
 val roomModule = module {}
 
 val dataModule = module {
-    includes(roomModule)
+    includes(domainModule, roomModule)
 }
