@@ -1,4 +1,6 @@
 # minimal-clean-architecture
+![Java](https://img.shields.io/badge/Java-21-blue)
+![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
 This repository explores how simple it can be to set up a valid, working Android project with 
 Kotlin + Jetpack Compose + Material 3 following clean architecture principles.
@@ -98,7 +100,6 @@ open core/data/build/reports/kover/htmlDebug/index.html
 - **Coverage uses Kover** - simpler than JaCoCo, works out of the box
 - AGP 9.0.1 works best with **Android Studio Panda 1 | 2025.3.1 Patch 1** or newer**, but you can use any IDE that supports Gradle builds.
 - Repository is set up as a **GitHub template**. Use the "Use this template" button to create new projects with the same minimal structure and 100% test coverage already configured.
-
 
 ## Contact
 
